@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shootableRobot;
+package shoot;
 
 import plugins.*;
 import constants.*;
@@ -19,7 +19,7 @@ public class Locker implements Runnable {
     private Relay locker;
     private boolean state;
     private Thread t;
-    private Object lock = null;
+    private Object key;
 
     /**
      *
@@ -39,10 +39,10 @@ public class Locker implements Runnable {
 
     /**
      *
-     * @param lock
+     * @param key
      */
-    public void lock(Object lock) {
-        this.lock = lock;
+    public void lock(Object key) {
+        this.key = key;
         state = false;
         t = new Thread(this);
         t.start();
@@ -50,18 +50,19 @@ public class Locker implements Runnable {
 
     /**
      *
-     * @param lock
+     * @param key
      */
-    public void unlock(Object lock) {
-        this.lock = lock;
+    public void unlock(Object key) {
+        this.key = key;
         state = true;
         t = new Thread(this);
         t.start();
     }
 
+    
     @Override
     public void run() {
-        synchronized (lock) {
+        synchronized (key) {
             if (state) {
                 //assuming forward locks
                 locker.set(Relay.Value.kForward);
@@ -72,7 +73,7 @@ public class Locker implements Runnable {
                 }
                 locker.set(Relay.Value.kOff);
             } else {
-                locker.set(Relay.Value.kBackward);
+                locker.set(Relay.Value.kReverse);
                 try {
                     Thread.sleep(Delay.LOCKER_CHANGE);
                 } catch (InterruptedException ex) {

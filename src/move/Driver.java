@@ -3,24 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package moveableRobot;
+package move;
 
 /**
  *
  * @author 207797739
  */
 public class Driver {
-
-    private GearBox leftGearBox, rightGearBox;
+   // C-R: gearbox and not gearBox.FIXED
+    private Gearbox leftGearbox, rightGearbox;
 
     /**
      *
-     * @param leftGearBox
-     * @param rightGearBox
+     * @param leftGearbox
+     * @param rightGearbox
      */
-    public Driver(GearBox leftGearBox, GearBox rightGearBox) {
-        this.leftGearBox = leftGearBox;
-        this.rightGearBox = rightGearBox;
+    // C-R: gearbox and not gearBox.FIXED
+    public Driver(Gearbox leftGearbox, Gearbox rightGearbox) {
+        this.leftGearbox = leftGearbox;
+        this.rightGearbox = rightGearbox;
     }
 
     /**
@@ -31,7 +32,7 @@ public class Driver {
      * @param rightGearBoxPort2
      */
     public Driver(int leftGearBoxPort1, int leftGearBoxPort2, int rightGearBoxPort1, int rightGearBoxPort2) {
-        this(new GearBox(leftGearBoxPort1, leftGearBoxPort2), new GearBox(rightGearBoxPort1, rightGearBoxPort2));
+        this(new Gearbox(leftGearBoxPort1, leftGearBoxPort2), new Gearbox(rightGearBoxPort1, rightGearBoxPort2));
     }
 
     /**
@@ -39,8 +40,8 @@ public class Driver {
      * @param speed
      */
     public void straigt(double speed){
-        rightGearBox.set(speed);
-        leftGearBox.set(-speed);
+        rightGearbox.set(speed);
+        leftGearbox.set(-speed);
     }
 
     /**
@@ -49,7 +50,14 @@ public class Driver {
      * turns right while speed>0
      */
     public void turn(double speed){
-        rightGearBox.set(speed);
-        leftGearBox.set(speed);
+        rightGearbox.set(speed);
+        leftGearbox.set(speed);
     }
+    
+    /*
+    C-R:
+    add the following methods:
+        void driveTwoJosticks(double left, double right);
+        void arcade(double speed, double turn);
+    */
 }

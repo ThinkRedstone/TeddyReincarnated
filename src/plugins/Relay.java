@@ -14,11 +14,30 @@ public class Relay {
 		
 	}
 	
-	 public static class Value{
-		public static Value kOff;
-		public static Value kOn;
-		public static Value kForward;
-		public static Value kBackward;
+    /**
+     *
+     */
+    public static class Value{
+
+        /**
+         *
+         */
+        public static Value kOff;
+
+        /**
+         *
+         */
+        public static Value kOn;
+
+        /**
+         *
+         */
+        public static Value kForward;
+
+        /**
+         *
+         */
+        public static Value kReverse;
 	}
 	
     /**

@@ -4,7 +4,7 @@ package plugins;
  *
  * @author 207797739
  */
-public class Victor {
+public class Victor implements SpeedController{
 
     /**
      *
@@ -18,6 +18,7 @@ public class Victor {
      *
      * @param s
      */
+    @Override
     public void set(double s){
 		
 	}

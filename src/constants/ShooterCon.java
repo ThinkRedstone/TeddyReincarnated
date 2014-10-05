@@ -9,23 +9,20 @@ package constants;
  *
  * @author 207797739
  */
-public class Delay {
-
-    private Delay() {}
-    
-    /**
-     * the delays used in the robot
-     */
-    public static final int LOCKER_CHANGE=100;
+public class ShooterCon {
 
     /**
      *
      */
-    public static final int TIME_TO_RETRACT=5000;
+    public static final int TURNS_TO_WIND = 10;
 
     /**
      *
      */
-    public static final int TIME_TO_LOAD = 5000;
-    
+    public static final int WIND_SPEED = 1;
+
+    /**
+     *
+     */
+    public static final boolean AUTO_WIND_DEFAULT = true;
 }

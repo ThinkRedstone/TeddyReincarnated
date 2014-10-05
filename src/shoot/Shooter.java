@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shootableRobot;
+package shoot;
 
 import constants.*;
 import java.util.logging.Level;
@@ -17,11 +17,10 @@ import plugins.*;
  */
 public class Shooter implements Runnable {
 
-    final private Object lock = new Object();
     private Locker locker;
     private EncodedTalon wind;
     private DigitalInput lockerLocked, lockerOpen;
-    boolean autoWind = shooterCon.AUTO_WIND_DEFAULT;
+    boolean autoWind = ShooterCon.AUTO_WIND_DEFAULT;
     Thread t;
     private int turnsToWind;
 //    final private byte OPEN = 1;
@@ -86,15 +85,15 @@ public class Shooter implements Runnable {
 
     @Override
     public void run() {
-        synchronized (lock) {
+        synchronized (this) {
             if (autoWind) {
-                wind.set(shooterCon.WIND_SPEED);
-                while (wind.getEncoder() < shooterCon.TURNS_TO_WIND * 60) {
+                wind.set(ShooterCon.WIND_SPEED);
+                while (wind.getEncoder() < ShooterCon.TURNS_TO_WIND * 60) {
                 }
                 wind.set(0);
                 wind.resetEncoder();
             } else {
-                wind.set(shooterCon.WIND_SPEED);
+                wind.set(ShooterCon.WIND_SPEED);
                 while (wind.getEncoder() < turnsToWind * 60) {
                 }
                 wind.set(0);
@@ -108,7 +107,7 @@ public class Shooter implements Runnable {
      * primes the next shot
      */
     public void prime() {
-        locker.lock(lock);
+        locker.lock(this);
         wind();
     }
 
@@ -116,7 +115,7 @@ public class Shooter implements Runnable {
      * shoots a primed shot
      */
     public void shoot() {
-        locker.unlock(lock);
+        locker.unlock(this);
 
     }
 }
