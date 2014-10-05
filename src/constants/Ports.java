@@ -26,70 +26,70 @@ public class Ports {
  _ \__...____...__    __/ __
    ~              ~~~~  ~~
      */
-    public static final int LEFT_TALON_1;
+    public static final int LEFT_TALON_1=1;
 
     /**
      *
      */
-    public static final int LEFT_TALON_2;
+    public static final int LEFT_TALON_2=1;
 
     /**
      *
      */
-    public static final int RIGHT_TALON_1;
+    public static final int RIGHT_TALON_1=1;
 
     /**
      *
      */
-    public static final int RIGHT_TALON_2;
+    public static final int RIGHT_TALON_2=1;
 
     /**
      * Port for the SC that controls the locker 
      */
-    public static final int LOCKER_PORT;
+    public static final int LOCKER_PORT=1;
 
     /**
      *
      */
-    public static final int WIND_TALON_PORT;
+    public static final int WIND_TALON_PORT=1;
 
     /**
      *
      */
-    public static final int WIND_ENCODER_PORT_1;
+    public static final int WIND_ENCODER_PORT_1=1;
 
     /**
      *
      */
-    public static final int WIND_ENCODER_PORT_2;
+    public static final int WIND_ENCODER_PORT_2=1;
 
     /**
      *
      */
-    public static final int LOCKER_LOCKED_PORT;
+    public static final int LOCKER_LOCKED_PORT=1;
 
     /**
      *
      */
-    public static final int LOCKER_OPEN_PORT;
+    public static final int LOCKER_OPEN_PORT=1;
 
     /**
      *
      */
-    public static final int ROLLER_RIGHT_SWITCH_PORT;
+    public static final int ROLLER_RIGHT_SWITCH_PORT=1;
 
     /**
      *
      */
-    public static final int ROLLER_LEFT_SWITCH_PORT;
+    public static final int ROLLER_LEFT_SWITCH_PORT=1;
 
     /**
      *
      */
-    public static final int ROLLER_ROLL_PORT;
+    public static final int ROLLER_ROLL_PORT=1;
 
     /**
      *
      */
-    public static final int ROLLER_MOVE_PORT;
+    public static final int ROLLER_MOVE_PORT=1;
 }

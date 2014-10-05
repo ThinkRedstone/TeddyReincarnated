@@ -32,25 +32,25 @@ public class Controls {
         
      */
     
-    public static final int DRIVER_PORT;
+    public static final int DRIVER_PORT=1;
 
     /**
      *
      */
-    public static final int NAV_PORT;
+    public static final int NAV_PORT=1;
 
     /**
      *
      */
-    public static final int LOAD;
+    public static final int LOAD=1;
 
     /**
      *
      */
-    public static final int PRIME;
+    public static final int PRIME=1;
 
     /**
      *
      */
-    public static final int SHOOT;
+    public static final int SHOOT=1;
 }
