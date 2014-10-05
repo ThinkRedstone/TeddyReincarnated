@@ -1,0 +1,3 @@
+Relay locker;
+Talon wind;
+Digital Input locker Locked,Open;
